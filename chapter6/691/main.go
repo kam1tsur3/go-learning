@@ -15,6 +15,7 @@ import (
 func writeToConn(sessionResponses chan chan *http.Response, conn net.Conn) {
 	defer conn.Close()
 
+	// never stop loop until sessionResponses is closed
 	for sessionResponse := range sessionResponses {
 		response := <-sessionResponse
 		response.Write(conn)
