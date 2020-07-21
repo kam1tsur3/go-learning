@@ -1,0 +1,11 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	fmt.Println(os.ExpandEnv("${HOME}/gobin"))
+	os.Exit(1)
+}
